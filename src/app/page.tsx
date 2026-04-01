@@ -10,9 +10,11 @@ export default function Home() {
         <h1 className="text-5xl font-extrabold mb-4 text-blue-700 bg-clip-text">
           Alberto Ramiro Neimerk
         </h1>
+        
         <p className="text-2xl text-zinc-700 dark:text-zinc-300 mb-6">
           Físico, Engenheiro de Software e Especialista em IA e Dados.
         </p>
+        
         <p className="max-w-2xl text-2xl text-zinc-500">
           Transformando rigor matemático em código de alta performance. 
           Mais de 20 anos de experiência em TI (hardware e software); liderando projetos que unem 

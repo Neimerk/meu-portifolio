@@ -23,6 +23,9 @@ export default function AboutSection() {
             className="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105"
             priority // Carrega esta imagem com prioridade (importante para LCP)
           />
+          <h3>Contatos:</h3>
+          <p>(48) 98447-0474</p>
+          <p>albertoneimerk@gmail.com</p>
         </div>
       </motion.div>
 
