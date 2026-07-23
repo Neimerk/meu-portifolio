@@ -1,34 +1,73 @@
-# Portfolio Profissional - Alberto Ramiro Neimerk
+# React + TypeScript + Vite
 
-Este projeto é o meu portfólio pessoal e profissional, desenvolvido com o objetivo de demonstrar minhas competências em Engenharia de Software, Desenvolvimento Full Stack e Análise de Dados.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 🚀 Tecnologias Utilizadas
+Currently, two official plugins are available:
 
-- **Frontend:** [Next.js 14+](https://nextjs.org/) (App Router), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/).
-- **Animações:** [Framer Motion](https://www.framer.com/motion/).
-- **Ícones:** [Lucide React](https://lucide.dev/).
-- **Deploy & CI/CD:** [Vercel](https://vercel.com/).
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## 🛠️ Arquitetura do Projeto
+## React Compiler
 
-O projeto segue as melhores práticas de Clean Code e escalabilidade:
-- `/src/app`: Gerenciamento de rotas e Server Components.
-- `/src/components`: Componentes de UI reutilizáveis e otimizados.
-- `/src/data`: Centralização de dados e textos, facilitando a manutenção.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 📈 Projetos em Destaque no Portfólio
+## Expanding the ESLint configuration
 
-- **BrasUX - Soluções Tecnológicas:** Startup fundada por mim com foco em soluções corporativas.
-- **NotaOn / SimulAI:** Ecossistema educacional utilizando Inteligência Artificial para correção e simulados.
-- **BrasUX-Data:** Pipeline de Big Data para análise de e-commerce utilizando Python e R.
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## 🔧 Como rodar o projeto localmente
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-```bash
-# Instalar dependências
-npm install
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-# Rodar em modo de desenvolvimento
-npm run dev
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
-## Desenvolvido por Alberto Ramiro Neimerk - Físico & Engenheiro de Software.
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
