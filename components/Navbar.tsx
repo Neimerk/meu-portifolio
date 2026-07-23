@@ -90,6 +90,14 @@ export default function Navbar() {
             }}>
               {dark ? <Sun size={15} /> : <Moon size={15} />}
             </button>
+            <a href="/curriculo" className="hidden md:inline-flex" style={{
+              padding: '0.5rem 1.125rem', fontSize: '0.8125rem', fontWeight: 600,
+              color: 'var(--primary)', textDecoration: 'none', borderRadius: '0.5rem',
+              border: '1px solid var(--border-accent)', background: 'var(--primary-glow)',
+              transition: 'all 0.2s', letterSpacing: '-0.01em'
+            }}>
+              Currículo
+            </a>
             <a href="#contato" className="hidden md:inline-flex btn-primary" style={{ padding: '0.5rem 1.25rem', fontSize: '0.8125rem' }}>
               Contato
             </a>
@@ -112,6 +120,12 @@ export default function Navbar() {
                 fontWeight: 500, color: 'var(--text-2)', textDecoration: 'none'
               }}>{l.label}</a>
             ))}
+            <a href="/curriculo" onClick={() => setOpen(false)} style={{
+              padding: '0.875rem 1rem', borderRadius: '0.5rem', fontSize: '1rem',
+              fontWeight: 600, color: 'var(--primary)', textDecoration: 'none',
+              background: 'var(--primary-glow)', border: '1px solid var(--border-accent)',
+              marginTop: '0.5rem', textAlign: 'center'
+            }}>Currículo</a>
           </div>
         )}
       </div>
