@@ -63,7 +63,6 @@ export default function Curriculo() {
                   { icon: '📱', text: '(48) 98447-0474', href: 'https://wa.me/5548984470474' },
                   { icon: '✉️', text: 'albertoneimerk@gmail.com', href: 'mailto:albertoneimerk@gmail.com' },
                   { icon: '🔗', text: 'linkedin.com/in/alberto-neimerk', href: 'https://www.linkedin.com/in/alberto-neimerk/' },
-                  { icon: '🌐', text: 'albertoneimerk.vercel.app', href: 'https://albertoneimerk.vercel.app' },
                   { icon: '📍', text: 'Santa Catarina, Brasil', href: undefined },
                 ].map(c => (
                   <div key={c.text} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -74,6 +73,20 @@ export default function Curriculo() {
                     }
                   </div>
                 ))}
+
+                {/* Portfolio link — destaque */}
+                <a href="https://albertoneimerk.vercel.app" style={{
+                  marginTop: '0.5rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
+                  padding: '0.4rem 0.875rem', borderRadius: '0.5rem',
+                  background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.25)',
+                  color: 'white', textDecoration: 'none', fontWeight: 600, fontSize: '0.8rem',
+                  transition: 'all 0.2s'
+                }}>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                  </svg>
+                  albertoneimerk.vercel.app
+                </a>
               </div>
             </div>
           </div>
@@ -254,10 +267,16 @@ export default function Curriculo() {
           </div>
 
           {/* ── FOOTER ── */}
-          <div style={{ background: '#f8faff', borderTop: '1px solid #e2e8f0', padding: '1rem 3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
-            <span style={{ fontSize: '0.75rem', color: '#94a3b8' }}>
-              Portfólio completo: <a href="https://albertoneimerk.vercel.app" style={{ color: '#6366f1', textDecoration: 'none' }}>albertoneimerk.vercel.app</a>
-            </span>
+          <div style={{ background: '#f8faff', borderTop: '1px solid #e2e8f0', padding: '1rem 3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
+            <a href="https://albertoneimerk.vercel.app" style={{
+              display: 'inline-flex', alignItems: 'center', gap: '0.375rem',
+              fontSize: '0.8125rem', fontWeight: 600, color: '#6366f1', textDecoration: 'none'
+            }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              albertoneimerk.vercel.app — Portfólio Completo
+            </a>
             <span style={{ fontSize: '0.75rem', color: '#94a3b8' }}>
               BrasUX · Santa Catarina, Brasil · {new Date().getFullYear()}
             </span>
